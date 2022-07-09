@@ -1,0 +1,85 @@
+<%- include("./header")%>
+
+    <title>certreg-profile</title>
+    
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+        .option-box{
+            max-width: 600px;
+            margin: auto;
+            display: flex;
+        }
+
+        
+        .dlt {
+            background-color: red;
+            color: white;
+        }
+        
+        th {
+            background-color: rgb(241, 241, 241);
+        }
+    </style>
+
+</head>
+
+
+
+<body>
+    <!--navbar-->
+<h1>YOUR PROFILE</h1>
+        <div class="option-box">
+        
+                
+            <button><a href="/cert-reg"></a><a href="/cert-reg">Add certificate</a></button>
+                    <div class="search-container">
+                        <form action="/action_page.php">
+                          <input type="text" placeholder="Search.." name="search">
+                          <button type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                      </div>
+               
+        </div>
+
+    <br>
+    <br>
+
+    <!--cert view table-->
+    <table class="tab">
+        <tbody>
+            <tr>
+                <th>CSP</th>
+                <th>Certificate Level</th>
+                <th>Certificate Name</th>
+                <th>Certification ID</th>
+                <th>Date of Certification</th>
+                <th>Expiry Date of Certification</th>
+                <th>Validity</th>
+                <th>Delete</th>
+
+            </tr>
+            <tr>
+
+                <td>aws </td>
+                <td>associate</td>
+                <td>saa</td>
+                <td>789799</td>
+                <td>3/3/22</td>
+                <td>8/8/24</td>
+                <td>2</td>
+                <td><button class="dlt"><span class="glyphicon glyphicon-remove"></span></button></td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>

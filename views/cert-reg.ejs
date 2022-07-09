@@ -1,0 +1,152 @@
+<%- include("./header")%>
+
+<style>
+    
+    .form-grp
+    {
+        padding:8px;
+    }
+    
+    .cert-reg-form {
+        min-height: 40px;
+        width: 100%;
+        margin: 10px;
+    }
+     .cert-reg-label{
+        padding:2px;
+     }
+    .cert-form,h2 {
+        padding: 20px;
+        border: 3px solid #f1f1f1;
+        max-width: 500px;
+        margin: auto;
+        max-height: min-content;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    
+    .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 10px;
+        margin: 20px;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+        width:40%;
+        
+    }
+    #cancel{
+      text-align:center;
+     }
+    input,
+    select {
+        background-color: rgb(241, 241, 241);
+        border: 0ch;
+    }
+</style>
+
+  <h2>CERTIFICATE REGISTRATION</h2>
+    <form class="cert-form" method="" action="">
+
+        <!--employee name-->
+        <div class="form-grp">
+            <label class="cert-reg-label">Employee Name : </label><br>
+            <input class="cert-reg-form" type="text" required="" pattern="[a-zA-Z]*" maxlength="25" name="emp-name">
+        </div>
+
+
+        <!--CSP-->
+        <div class="form-grp">
+            <label class="cert-reg-label">CSP : </label><br>
+            <select class="cert-reg-form" type="text" "="" required=" " name="csp ">
+                <option value="aws ">AWS</option>
+                <option value="azure ">Azure</option>
+                <option value="gcp ">GCP</option>
+                </select>
+            </div>
+
+<!--certification level-->
+            <div class="form-grp ">
+                <label class="cert-reg-label ">Certification Level : </label><br>
+                <input class="cert-reg-form " type="text " required=" " pattern="[a-zA-Z]* " name="cert-level ">
+            </div>
+
+
+<!--certification name-->
+            <div class="form-grp ">
+                <label class="cert-reg-label ">Certification Name : </label><br>
+                <input class="cert-reg-form " type="text " required=" " name="cert-name ">
+            </div>
+
+
+<!--certificate id-->
+            <div class="form-grp ">
+                <label class="cert-reg-label">Certificate ID : </label><br>
+                <input class="cert-reg-form " type="text " required=" " pattern="[a-zA-Z0-9]+ " name="cert-id ">
+            </div>
+
+
+<!--date of certification-->
+            <div class="form-grp ">
+
+                <label class="cert-reg-label">Date of Certification : </label><br>
+                <input type="date" class="cert-reg-form" id="date_picker">
+            </div>
+
+
+<!--expirydate-->
+            <div class="form-grp ">
+                <label class="cert-reg-label">Expiry date of Certification : </label><br>
+               <input type="date" class="cert-reg-form" id="date_picker_exp">
+            </div>
+
+
+<!-- validity-->
+            <div class="form-grp ">
+                <label class="cert-reg-label ">Validity : </label><br>
+                <input class="cert-reg-form " type="number " required=" " name="cert-valid ">
+
+            </div>
+
+<!--submit button-->    
+                <button type="button " class="btn">Submit</button>
+<!--cancel bttn-->
+             <button class="btn" type="cancel" onclick="window.location='/';return 
+             false;">Cancel</button>
+       
+ </form>
+
+               
+            
+
+<!--js-->
+<script>
+ var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0');
+                    var yyyy = today.getFullYear();
+
+                    today = yyyy + '-' + mm + '-' + dd;
+                    $('#date_picker').attr('max', today);
+
+
+
+var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0');
+                    var yyyy = today.getFullYear();
+
+                    today = yyyy + '-' + mm + '-' + dd;
+                    $('#date_picker_exp').attr('min', today);
+
+
+
+
+$(document).ready(function(){
+    $("form ").on('submit',function(e){
+        alert("Form submitted ");
+        return false;
+        
+    });
+});</script> 
+</container>
